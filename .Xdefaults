@@ -1,0 +1,43 @@
+! urxvt configuration
+
+! scrollbar style - rxvt (default), plain (most compact), next, or xterm
+URxvt.scrollstyle: plain
+URxvt.scrollBar_right: true
+
+! font
+URxvt.font: xft:Terminus:size=14
+URxvt.renderFont: true
+
+! Use the specified colour as the windows foreground colour [default Black]; option -fg.
+URxvt.foreground: green
+
+! external compositor transparency
+! Use the specified colour as the windows background colour [default White]; option -bg.
+URxvt.background: [95]#000000
+URxvt.depth: 32
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! unused leftovers
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! native transparency
+!URxvt*.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+!URxvt*.shading: 66
+
+! yeahconsole settings (no longer used)
+!yeahconsole*term: urxvt
+!yeahconsole*consoleHeight: 16
+!yeahconsole*toggleKey: Win+grave
+! Fake transparency
+!yeahconsole*depth: 32
+!yeahconsole*inheritPixmap: true
+!yeahconsole*shading: 10
+!yeahconsole*transparent: true
+!yeahconsole*tint: true
+!yeahconsole*background: [66]black
+
+
