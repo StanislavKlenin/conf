@@ -1,0 +1,2 @@
+Control w           :close_tab
+Control @Tab@       :focus_next
