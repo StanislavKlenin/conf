@@ -5,8 +5,12 @@ URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
 
 ! font
-URxvt.font: xft:Terminus:size=14
-URxvt.renderFont: true
+! this definition has problems with cyrillic symbols (wrong typeset/size)
+!URxvt.font: xft:Terminus:size=14
+
+! XLFD definitions with pixel sizes (work ok with terminus)
+URxvt.font:     -*-terminus-medium-r-*-*-18-*-*-*-*-*-iso10646-1
+URxvt.boldFont: -*-terminus-bold-r-*-*-18-*-*-*-*-*-iso10646-1
 
 ! Use the specified colour as the windows foreground colour [default Black]; option -fg.
 URxvt.foreground: green
