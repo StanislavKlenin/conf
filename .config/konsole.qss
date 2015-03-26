@@ -1,0 +1,14 @@
+/*
+   slight modification of the active tab text to use in conjunction with dark themes or backgrounds
+*/
+
+QTabBar::tab:top:selected
+{
+    color: #fefefe;
+}
+
+QTabBar::tab:bottom:selected
+{
+    color: #fefefe;
+}
+
