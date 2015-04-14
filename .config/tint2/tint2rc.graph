@@ -31,7 +31,7 @@ panel_dock = 0
 wm_menu = 0
 panel_layer = top
 panel_background_id = 1
-panel_items = LTGSC
+panel_items = TGSC
 # G is for graphs, if appropriate patch is applied
 
 # Panel Autohide
@@ -43,7 +43,7 @@ strut_policy = follow_size
 
 # Launchers
 launcher_background_id = 0
-launcher_item_app = /usr/share/applications/dwb.desktop
+#launcher_item_app = /usr/share/applications/dwb.desktop
 
 # Taskbar
 taskbar_mode = single_desktop
@@ -51,6 +51,12 @@ taskbar_padding = 4 0 2
 taskbar_background_id = 0
 taskbar_active_background_id = 0
 taskbar_name = 0
+taskbar_name_padding = 2
+taskbar_name_background_id = 0
+taskbar_name_active_background_id = 1
+taskbar_name_font = sans italic 7
+taskbar_name_font_color = #AAAAAA 100
+taskbar_name_active_font_color = #FFFFFF 100
 
 # Tasks
 urgent_nb_of_blink = 8
