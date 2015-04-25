@@ -1,0 +1,79 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+separator_block_width=15
+
+#[battery]
+#label=BAT
+#label=⚡
+#command=/usr/share/i3blocks/battery
+#interval=30
+
+#[wireless]
+#label=W
+#instance=wlan0
+#instance=wlp3s0
+#command=/usr/share/i3blocks/network
+#color=#00FF00
+#interval=10
+
+[focused]
+command=xdotool getactivewindow getwindowname 2>/dev/null || echo "None"
+interval=3
+color=#A6D1FA
+align=left
+
+[coretemp]
+label=t
+command=echo $(sensors coretemp-isa-0000 | grep "^Core" | tr -s ' ' | cut -d ' ' -f 3 | tr -d 'C' | tr  "\\n" " ")
+interval=5
+
+[cpu]
+#label=⌑
+label=▣
+command=/usr/share/i3blocks/cpu_usage
+interval=2
+#min_width=CPU: 100.00%
+color=#0099FF
+align=right
+
+[memory]
+label=▦
+#label=☷
+command=/usr/share/i3blocks/memory
+interval=5
+color=#00FF99
+separator=false
+
+[swap]
+#label=SWP
+label=⛁
+instance=swap
+command=/usr/share/i3blocks/memory
+interval=30
+color=#999900
+
+[time]
+command=if [ "x$BLOCK_BUTTON" = "x" ]; then date '+%H:%M:%S'; else date '+%Y-%m-%d'; fi
+interval=1
+
