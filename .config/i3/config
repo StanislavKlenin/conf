@@ -15,13 +15,17 @@ set $mod Mod1
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
+#font pango:DejaVu Sans Mono 10
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
+#
+#font pango:DejaVu Sans Mono 10
+#
+font pango:Terminus Bold 14px
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -29,21 +33,30 @@ floating_modifier $mod
 # disable focus following mouse
 focus_follows_mouse no
 
+# border type for new managed windows (this seems to be default)
 #new_window pixel 2
 
+# set default layout
+workspace_layout tabbed
+
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec konsole --bg '#323232' --fg '#808080' --stylesheet=$HOME/.config/konsole.qss
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# lock screen
+bindsym $mod+Control+l exec xscreensaver-command -lock
+
 # start dmenu (a program launcher)
-bindsym $mod+r exec dmenu_run
+bindsym $mod+r exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-14-*" -sb "#606060"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+Control+r exec --no-startup-id i3-dmenu-desktop
 
+# focus latest urgent window
 bindsym $mod+u [urgent=latest] focus
 
 # change focus
@@ -97,6 +110,11 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+c focus child
 
+# titlebar toggling: at least two shortcuts required
+bindsym $mod+t border normal
+bindsym $mod+y border 1pixel
+##bindsym $mod+i border none
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -122,9 +140,14 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-for_window [class="Tilda"] floating enable; border none; move absolute position 0px 0px
+#for_window [class="Tilda"] floating enable; border none; move absolute position 0px 0px
+#for_window [class="Tilda"] floating enable; move absolute position 0px 0px
+for_window [class="Tilda"] floating enable
 for_window [class="mplayer2"] floating enable
-for_window [class="stalonetray"] floating enable
+for_window [class="Pidgin" window_role="buddy_list"] floating enable
+for_window [class="Skype"] floating enable
+for_window [class="Skype" window_role="ConversationsWindow"] floating disable
+#for_window [class="stalonetray"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -141,16 +164,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 1 px or 1 ppt
+        bindsym Down resize grow height 1 px or 1 ppt
+        bindsym Up resize shrink height 1 px or 1 ppt
+        bindsym Right resize grow width 1 px or 1 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -167,10 +190,24 @@ bindsym $mod+z mode "resize"
 #client.urgent           #2f343a #900000 #ffffff #900000
 
 # custom darker
-client.focused          #001429 #000f1f #ffffff #002952
-client.focused_inactive #333333 #3f474a #aaaaaa #484e50
+#client.focused          #001429 #000f1f #ffffff #002952
+#client.focused_inactive #333333 #3f474a #aaaaaa #484e50
 
-# trying out
+#client.focused          #202020 #000000 #ffffff #002952
+#client.unfocused        #d0d0d0 #d6d2d0 #606060 #484e50
+#client.focused_inactive #e0e0e0 #efefef #969696 #484e50
+#
+# custom darker again
+#client.focused          #2c5879 #083557 #ffffff #002952
+#client.focused_inactive #333333 #3f474a #aaaaaa #484e50
+
+
+# afterglow-inspired
+# class                 border  backgr. text    indicator
+client.focused          #404040 #2e2e2e #ffffff #444444
+client.focused_inactive #303030 #282828 #808080 #363636
+client.unfocused        #202020 #1e1e1e #484848 #303030
+
 
 # i3bar
 bar {
@@ -179,5 +216,17 @@ bar {
     font pango:Terminus 14px
     colors {
         background #202020
+
+        # colorclass       border  backgr. text
+        focused_workspace  #666666 #484848 #ffffff
     }
 }
+
+
+# autostart
+exec setxkbmap -layout us,ru -variant ,legacy -option grp:shift_caps_toggle
+exec xcompmgr
+exec fbxkb
+exec tilda -h
+exec xscreensaver
+

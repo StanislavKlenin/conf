@@ -38,14 +38,15 @@ separator_block_width=15
 #interval=10
 
 [focused]
-command=xdotool getactivewindow getwindowname 2>/dev/null || echo "None"
-interval=3
+command=xdotool getactivewindow getwindowname 2>/dev/null || echo ""
+interval=1
 color=#A6D1FA
 align=left
 
 [coretemp]
 label=t
 command=echo $(sensors coretemp-isa-0000 | grep "^Core" | tr -s ' ' | cut -d ' ' -f 3 | tr -d 'C' | tr  "\\n" " ")
+color=#009999
 interval=5
 
 [cpu]
