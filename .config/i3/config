@@ -205,8 +205,8 @@ bindsym $mod+z mode "resize"
 # afterglow-inspired
 # class                 border  backgr. text    indicator
 client.focused          #404040 #2e2e2e #ffffff #444444
-client.focused_inactive #303030 #282828 #808080 #363636
-client.unfocused        #202020 #1e1e1e #484848 #303030
+client.focused_inactive #363636 #282828 #808080 #363636
+client.unfocused        #303030 #1e1e1e #484848 #303030
 
 
 # i3bar
