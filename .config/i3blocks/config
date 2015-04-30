@@ -23,11 +23,17 @@
 # Global properties
 separator_block_width=15
 
+[focused]
+command=$HOME/.config/i3blocks/focused
+interval=1
+color=#A6D1FA
+align=left
+
 #[battery]
-#label=BAT
+##label=BAT
 #label=⚡
 #command=/usr/share/i3blocks/battery
-#interval=30
+#interval=10
 
 #[wireless]
 #label=W
@@ -37,11 +43,6 @@ separator_block_width=15
 #color=#00FF00
 #interval=10
 
-[focused]
-command=xdotool getactivewindow getwindowname 2>/dev/null || echo ""
-interval=1
-color=#A6D1FA
-align=left
 
 [coretemp]
 label=t

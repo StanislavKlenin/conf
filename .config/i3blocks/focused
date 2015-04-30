@@ -1,0 +1,10 @@
+#!/bin/bash
+
+LANG=en_US.UTF-8
+max=90
+title=$(xdotool getactivewindow getwindowname 2>/dev/null)
+if [ ${#title} -gt $max ]; then
+    title=${title:0:$max}
+    title="${title}…"
+fi
+echo $title
