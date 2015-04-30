@@ -54,7 +54,7 @@ interval=5
 label=▣
 command=/usr/share/i3blocks/cpu_usage
 interval=2
-#min_width=CPU: 100.00%
+min_width=#: 100.00%
 color=#0099FF
 align=right
 
