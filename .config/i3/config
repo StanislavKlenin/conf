@@ -41,7 +41,10 @@ workspace_layout tabbed
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec konsole --bg '#323232' --fg '#808080' --stylesheet=$HOME/.config/konsole.qss
+# dark (afterglow) colors: 
+#bindsym $mod+Return exec konsole --bg '#323232' --fg '#808080' --stylesheet=$HOME/.config/konsole.qss
+# solarized colors:
+bindsym $mod+Return exec konsole --bg '#002b36' --fg '#839496' --stylesheet=$HOME/.config/konsole.qss
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -204,21 +207,37 @@ bindsym $mod+z mode "resize"
 
 # afterglow-inspired
 # class                 border  backgr. text    indicator
-client.focused          #404040 #2e2e2e #ffffff #444444
-client.focused_inactive #363636 #282828 #808080 #363636
-client.unfocused        #303030 #1e1e1e #484848 #303030
+#client.focused          #404040 #2e2e2e #ffffff #444444
+#client.focused_inactive #363636 #282828 #808080 #363636
+#client.unfocused        #303030 #1e1e1e #484848 #303030
 
+# solarized dark
+client.focused          #073642 #002b36 #fdf6e3 #268bd2
+client.unfocused        #073642 #073642 #839496 #073642
+client.focused_inactive #073642 #002b36 #93a1a1 #073642
+client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 
 # i3bar
 bar {
     #status_command i3status
     status_command i3blocks
     font pango:Terminus 14px
+    # dark / afterglow-inspired
+    #colors {
+    #    background #202020
+    #
+    #     # colorclass       border  backgr. text
+    #    focused_workspace  #666666 #484848 #ffffff
+    #}
+    # solarized dark
     colors {
-        background #202020
-
-        # colorclass       border  backgr. text
-        focused_workspace  #666666 #484848 #ffffff
+        background #002b36
+        statusline #839496
+        separator  #586e75
+        focused_workspace  #002b36 #586e75 #fdf6e3
+        active_workspace   #586e75 #586e75 #002b36
+        inactive_workspace #073642 #002b36 #839496
+        urgent_workspace   #dc322f #dc322f #fdf6e3
     }
 }
 
