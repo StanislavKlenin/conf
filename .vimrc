@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 if &t_Co > 1
     syntax enable
     au BufNewFile,BufRead *.rs set filetype=rust
@@ -50,6 +52,9 @@ set expandtab
 map <Up> gk
 map <Down> gj
 
+" tab toggles autocomplete in insert mode
+" (does not affect literal tabs)
+imap <Tab> <C-N>
 
 " for utf-8 there is no need to set LANG
 set encoding=utf-8
@@ -57,12 +62,20 @@ set fileencodings=ucs-bom,utf-8
 
 set colorcolumn=81
 "vnoremap <C-c> "+y
-"
+
 " Mini Buffer Explorer options
-let g:miniBufExplVSplit = 24
-map <Leader>t :MBEToggle<cr>
-map <Leader>f :MBEFocus<cr>
+""let g:miniBufExplVSplit = 24
+""map <Leader>t :MBEToggle<cr>
+""map <Leader>f :MBEFocus<cr>
 
 " move that to colorscheme
 "hi LineNr ctermfg=LightGrey ctermbg=Blue
+
+let $GROFF_NO_SGR=1
+""source $VIMRUNTIME/ftplugin/man.vim
+""nmap K :Man <cword><CR>
+
+let g:netrw_liststyle=3
+
+" TODO: investigate NERDTree
 
