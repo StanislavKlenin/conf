@@ -231,7 +231,8 @@ bar {
     #}
     # solarized dark
     colors {
-        background #002b36
+#       background #002b36
+        background #073642
         statusline #839496
         separator  #586e75
         focused_workspace  #002b36 #586e75 #fdf6e3
@@ -248,4 +249,5 @@ exec xcompmgr
 exec fbxkb
 exec tilda -h
 exec xscreensaver -nosplash
+
 
