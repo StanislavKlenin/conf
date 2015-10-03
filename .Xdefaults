@@ -9,18 +9,31 @@ URxvt.scrollBar_right: true
 !URxvt.font: xft:Terminus:size=14
 
 ! XLFD definitions with pixel sizes (work ok with terminus)
-URxvt.font:     -*-terminus-medium-r-*-*-18-*-*-*-*-*-iso10646-1
-URxvt.boldFont: -*-terminus-bold-r-*-*-18-*-*-*-*-*-iso10646-1
+URxvt.font:     -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
+URxvt.boldFont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-1
 
 ! Use the specified colour as the windows foreground colour [default Black]; option -fg.
 URxvt.foreground: green
 
 ! external compositor transparency
 ! Use the specified colour as the windows background colour [default White]; option -bg.
-URxvt.background: [95]#000000
+!URxvt.background: [90]#000000
+!URxvt.background: [90]#1a1a1a
+
+URxvt.background: #002b36
 URxvt.depth: 32
+!URxvt.intensityStyles: false
 
+! some color redefines
+! blue
+URxvt.color12 : #5555FF
+! red
+URxvt.color9  : #FF5555
+! magenta
+URxvt.color13 : #FF55FF
 
+URxvt.perl-ext-common: default,keyboard-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
