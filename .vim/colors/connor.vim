@@ -17,7 +17,7 @@ hi Tabs                                            ctermbg=Brown
 hi ExtraSpace                                      ctermbg=DarkGrey
 
 hi Identifier   cterm=bold     ctermfg=Cyan
-hi Constant                    ctermfg=LightRed
+hi Constant                    ctermfg=DarkMagenta
 hi Comment                     ctermfg=DarkGrey
 hi String       cterm=bold     ctermfg=Magenta
 hi Character                   ctermfg=Magenta
@@ -42,16 +42,20 @@ hi Error                       ctermfg=White       ctermbg=Red
 hi Todo                        ctermfg=Black       ctermbg=Yellow
 
 hi CursorLine   cterm=none                         ctermbg=Black
-hi ColorColumn                                     ctermbg=DarkGrey
+hi ColorColumn                                     ctermbg=DarkBlue
 hi LineNr                      ctermfg=Grey        ctermbg=DarkGrey
 hi StatusLine                                      ctermbg=Black
 hi StatusLineNC  cterm=reverse ctermfg=DarkGrey    ctermbg=Grey
 hi WarningMsg                  ctermfg=Red
 
+hi Pmenu                       ctermfg=Black       ctermbg=Grey
+hi PmenuSel                    ctermfg=White       ctermbg=Black
+
 if &t_Co == 256
     hi ExtraSpace                                  ctermbg=236
     hi LineNr                  ctermfg=241         ctermbg=237
     hi StatusLine                                  ctermbg=232
+    hi ColorColumn                                 ctermbg=17
 endif
 " below is a tab with several spaces
 	    
