@@ -4,6 +4,9 @@
 URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
 
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
 ! font
 ! this definition has problems with cyrillic symbols (wrong typeset/size)
 !URxvt.font: xft:Terminus:size=14
