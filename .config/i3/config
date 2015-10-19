@@ -246,7 +246,7 @@ bar {
 
 # autostart
 exec setxkbmap -layout us,ru -variant ,legacy -option grp:shift_caps_toggle
-exec xcompmgr
+exec compton
 exec fbxkb
 exec tilda -h
 exec xscreensaver -nosplash
