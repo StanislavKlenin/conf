@@ -14,6 +14,7 @@ setopt share_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt extended_history
+setopt interactive_comments
 
 
 #
