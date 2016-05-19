@@ -50,7 +50,7 @@ zstyle ':completion:*:correct:*'       insert-unambiguous true
 # do not immediately correct command line but list possibe corrections
 zstyle ':completion:*'                 group-order original corrections
 zstyle ":completion:*"                 auto-description "specify: %d"
-zstyle ":completion:*"                 completer _expand _complete _correct _approximate
+zstyle ":completion:*"                 completer _expand _complete _approximate
 zstyle ":completion:*:default"         list-colors ${(s.:.)LS_COLORS}
 zstyle ":completion:*"                 list-colors ""
 zstyle ":completion:*"                 menu select=2
@@ -60,7 +60,7 @@ zstyle ":completion:*:descriptions"    format "%F{white}%d%f"
 zstyle ':completion:*:warnings'        format '%F{white}no matches for %d%f'
 # group suggestions by context
 zstyle ":completion:*"                 group-name ""
-zstyle ':completion:*'                 special-dirs ..
+zstyle ':completion:*'                 special-dirs true
 zstyle ":completion:*"                 verbose true
 zstyle ':completion:*:-command-:*:'    verbose false
 zstyle ':completion:*:processes'       command 'ps -au$USER'
@@ -114,6 +114,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias cal="ncal -M -b"
 
 
 #
