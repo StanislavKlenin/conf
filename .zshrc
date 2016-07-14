@@ -120,5 +120,7 @@ alias cal="ncal -M -b"
 #
 # source syntax highlighting script (should be last)
 #
-source /data/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# obtain from https://github.com/zsh-users/zsh-syntax-highlighting
+# or install appropriate package
+#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
