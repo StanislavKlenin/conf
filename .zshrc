@@ -116,6 +116,11 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias cal="ncal -M -b"
 
+#
+# Env
+#
+export PATH=$PATH:$HOME/bin
+export EDITOR=vim
 
 #
 # source syntax highlighting script (should be last)
