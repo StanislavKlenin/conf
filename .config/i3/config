@@ -47,7 +47,8 @@ workspace_layout tabbed
 # dark (afterglow) colors: 
 #bindsym $mod+Return exec konsole --bg '#323232' --fg '#808080' --stylesheet=$HOME/.config/konsole.qss
 # solarized colors:
-bindsym $mod+Return exec konsole --bg '#002b36' --fg '#839496' --stylesheet=$HOME/.config/konsole.qss
+#bindsym $mod+Return exec konsole --bg '#002b36' --fg '#839496' --stylesheet=$HOME/.config/konsole.qss
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -150,7 +151,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 #for_window [class="Tilda"] floating enable; border none; move absolute position 0px 0px
 #for_window [class="Tilda"] floating enable; move absolute position 0px 0px
 for_window [class="Tilda"] floating enable
-for_window [class="mplayer2"] floating enable
+for_window [class="MPlayer"] floating enable
 for_window [class="Pidgin" window_role="buddy_list"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Skype" window_role="ConversationsWindow"] floating disable
@@ -255,4 +256,6 @@ exec tilda -h
 exec xscreensaver -nosplash
 # laptop could make use of xfce power manager
 #exec xfce4-power-manager
+# and wicd client
+#exec wicd-client
 
