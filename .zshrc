@@ -37,6 +37,7 @@ setopt pushd_ignore_dups
 #
 autoload -U colors && colors
 export ZLS_COLORS=1
+eval "$(dircolors -b)"
 
 
 #
