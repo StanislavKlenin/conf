@@ -155,7 +155,7 @@ fi
 #
 # Env
 #
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 export EDITOR=vim
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
 
