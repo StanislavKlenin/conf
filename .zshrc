@@ -90,14 +90,39 @@ zle -N down-line-or-local-history
 bindkey -e
 
 # arrows only use local history
-bindkey "${key[Up]}" up-line-or-local-history
-bindkey "${key[Down]}" down-line-or-local-history
+#bindkey "${key[Up]}" up-line-or-local-history
+#bindkey "${key[Down]}" down-line-or-local-history
+bindkey "^[[A"   up-line-or-local-history
+bindkey "^[[B"   down-line-or-local-history
+
 # ctr + arrows use shared history
 bindkey "^[[1;5A" up-line-or-history
 bindkey "^[[1;5B" down-line-or-history
 
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
+# word navigation
+# urxvt with tmux
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# urxvt only
+bindkey "^[Oc"    forward-word
+bindkey "^[Od"    backward-word
+
+# home, end, delete
+# urxvt with tmux
+bindkey "^[[1~"  beginning-of-line
+bindkey "^[[4~"  end-of-line
+bindkey "^[[3~"  delete-char
+
+# urxvt only
+bindkey "^[[7~"  beginning-of-line
+bindkey "^[[8~"  end-of-line
+
+# tilda
+bindkey "^[OH"   beginning-of-line
+bindkey "^[OF"   end-of-line
+bindkey "^[[H"   beginning-of-line
+bindkey "^[[F"   end-of-line
 
 
 #
@@ -117,16 +142,36 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias cal="ncal -M -b"
 
+# distro-specific
+DISTRO=$(grep "ID=" /etc/os-release | cut -d '=' -f 2)
+if   [ "$DISTRO" = "debian" ]; then
+    alias cal="ncal -M -b"
+elif [ "$DISTRO" = "gentoo" ]; then
+    alias cal="cal -m"
+elif [ "$DISTRO" = "fedora" ]; then
+    alias cal="cal -m"
+fi
+
 #
 # Env
 #
 export PATH=$PATH:$HOME/bin
 export EDITOR=vim
+export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
+
+# git-related
+unset SSH_ASKPASS
+
 
 #
 # source syntax highlighting script (should be last)
 #
 # obtain from https://github.com/zsh-users/zsh-syntax-highlighting
 # or install appropriate package
-#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+for dir in /usr/share /usr/share/zsh/site-contrib /opt ; do
+    if [ -f $dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+        source $dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        break
+    fi
+done
 
