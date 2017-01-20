@@ -143,7 +143,7 @@ alias egrep='egrep --color=auto'
 alias cal="ncal -M -b"
 
 # distro-specific
-DISTRO=$(grep "ID=" /etc/os-release | cut -d '=' -f 2)
+DISTRO=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2)
 if   [ "$DISTRO" = "debian" ]; then
     alias cal="ncal -M -b"
 elif [ "$DISTRO" = "gentoo" ]; then
