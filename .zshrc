@@ -129,7 +129,7 @@ bindkey "^[[F"   end-of-line
 # prompt
 #
 autoload -U promptinit && promptinit
-PS1="[%{$fg_bold[green]%}%n%b@%{$fg_bold[green]%}%m%b]%{$fg_bold[blue]%}%~%b%(!.#.>) "
+PS1="[%{$fg[green]%}%U%n%u@%{$fg_bold[green]%}%m%b]%{$fg_bold[blue]%}%~%b%(!.#.>) "
 
 
 #
