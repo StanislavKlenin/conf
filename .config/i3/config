@@ -223,12 +223,17 @@ bindsym $mod+z mode "resize"
 #client.focused          #2c5879 #083557 #ffffff #002952
 #client.focused_inactive #333333 #3f474a #aaaaaa #484e50
 
-
 # afterglow-inspired
 # class                 border  backgr. text    indicator
 #client.focused          #404040 #2e2e2e #ffffff #444444
 #client.focused_inactive #363636 #282828 #808080 #363636
 #client.unfocused        #303030 #1e1e1e #484848 #303030
+
+# zenburn
+#client.focused          #7f9f7f #3f3f3f #ffffef #94bff3
+#client.focused_inactive #5f7f5f #4f4f4f #dcdccc #93b3a3
+#client.unfocused        #5f7f5f #6f6f6f #dcdccc #93b3a3
+#client.urgent           #dca3a3 #dca3a3 #DCDCCC #3f3f3f
 
 # solarized dark
 client.focused          #073642 #002b36 #fdf6e3 #268bd2
@@ -259,6 +264,17 @@ bar {
         inactive_workspace #073642 #002b36 #839496
         urgent_workspace   #dc322f #dc322f #fdf6e3
     }
+
+    # zenburn
+    #colors {
+    #    background #3f3f3f
+    #    statusline #dcdccc
+    #
+    #    focused_workspace  #93b3a3 #93b3a3 #3f3f3f
+    #    active_workspace   #ffcfaf #3f3f3f #ffcfaf
+    #    inactive_workspace #636363 #3f3f3f #dcdccc
+    #    urgent_workspace   #dca3a3 #cc9393 #ffffef
+    #}
 }
 
 #
