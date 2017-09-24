@@ -135,6 +135,8 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+minus workspace 11
+bindsym $mod+equal workspace 12
 bindsym $mod+d workspace back_and_forth
 
 # move focused container to workspace
@@ -148,11 +150,19 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+minus move container to workspace 11
+bindsym $mod+Shift+equal move container to workspace 12
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+BackSpace move scratchpad
+# Show the first scratchpad window
+bindsym $mod+BackSpace scratchpad show
 
 #for_window [class="Tilda"] floating enable; border none; move absolute position 0px 0px
 #for_window [class="Tilda"] floating enable; move absolute position 0px 0px
 for_window [class="Tilda"] floating enable
 for_window [class="MPlayer"] floating enable
+for_window [class="mpv"] floating enable
 for_window [class="Pidgin" window_role="buddy_list"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Skype" window_role="ConversationsWindow"] floating disable
