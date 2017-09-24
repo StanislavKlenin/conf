@@ -12,8 +12,8 @@ URxvt.secondaryScroll: 0
 !URxvt.font: xft:Terminus:size=14
 
 ! XLFD definitions with pixel sizes (work ok with terminus)
-URxvt.font:     -*-terminus-medium-r-*-*-14-*-*-*-*-*-iso10646-1
-URxvt.boldFont: -*-terminus-bold-r-*-*-14-*-*-*-*-*-iso10646-1
+URxvt.font:     -*-terminus-medium-r-*-*-32-*-*-*-*-*-iso10646-1
+URxvt.boldFont: -*-terminus-bold-r-*-*-32-*-*-*-*-*-iso10646-1
 
 
 ! disable native transparency
