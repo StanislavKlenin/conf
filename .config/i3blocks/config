@@ -21,18 +21,25 @@
 # urgent
 
 # Global properties
-separator_block_width=15
+separator_block_width=20
 
-[focused]
-command=$HOME/.config/i3blocks/focused
-interval=1
-color=#A6D1FA
-align=left
+#[focused]
+#command=$HOME/.config/i3blocks/focused
+#interval=2
+#color=#A6D1FA
+#align=left
 
-#[battery]
-##label=BAT
+# battery blocks
+#[battery0]
 #label=⚡
-#command=/usr/share/i3blocks/battery
+#instance=0
+#command=$HOME/.config/i3blocks/battery
+#interval=10
+#
+#[battery1]
+#label=⚡
+#instance=1
+#command=$HOME/.config/i3blocks/battery
 #interval=10
 
 #[wireless]
@@ -43,10 +50,9 @@ align=left
 #color=#00FF00
 #interval=10
 
-
 [coretemp]
 label=t
-command=echo $(sensors coretemp-isa-0000 | grep "^Core" | tr -s ' ' | cut -d ' ' -f 3 | tr -d 'C' | tr  "\\n" " ")
+command=echo $(sensors coretemp-isa-0000 | grep "^Core" | tr -s ' ' | cut -d ' ' -f 3 | tr -d '+C' | tr  "\\n" " ")
 color=#009999
 interval=5
 
@@ -72,11 +78,21 @@ separator=false
 #label=SWP
 label=⛁
 instance=swap
-command=/usr/share/i3blocks/memory
+#command=/usr/libexec/i3blocks/memory
+command=$HOME/.config/i3blocks/memory_alt
 interval=30
 color=#999900
 
+[date]
+command=date "+%Y-%m-%d"
+interval=60
+color=#657b83
+
 [time]
-command=if [ "x$BLOCK_BUTTON" = "x" ]; then date '+%H:%M:%S'; else date '+%Y-%m-%d'; fi
+command=date "+%H:%M:%S"
 interval=1
+
+#[time]
+#command=if [ "x$BLOCK_BUTTON" = "x" ]; then date '+%H:%M:%S'; else date '+%Y-%m-%d'; fi
+#interval=1
 
