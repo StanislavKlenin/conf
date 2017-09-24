@@ -28,7 +28,7 @@ set $mod Mod4
 #
 #font pango:DejaVu Sans Mono 10
 #
-font pango:Terminus Bold 14px
+font pango:Terminus Bold 28px
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -54,12 +54,15 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # lock screen
+# with xscreensaver:
 bindsym $mod+Control+l exec xscreensaver-command -lock
+# or with dm-tool
+#bindsym $mod+Control+l exec dm-tool lock
 
 # start dmenu (a program launcher)
-#bindsym $mod+r exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-14-*" -sb "#606060"
-#bindsym $mod+r exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-14-*" -nb "#002b36" -sb "#586e75"
-bindsym $mod+r exec dmenu_run -fn "terminus:style=regular:pixelsize=14" -nb "#002b36" -sb "#586e75"
+#bindsym $mod+r exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-28-*" -sb "#606060"
+#bindsym $mod+r exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-28-*" -nb "#002b36" -sb "#586e75"
+bindsym $mod+r exec dmenu_run -fn "terminus:style=regular:pixelsize=28" -nb "#002b36" -sb "#586e75"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -237,7 +240,7 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 bar {
     #status_command i3status
     status_command i3blocks
-    font pango:Terminus 14px
+    font pango:Terminus 28px
     # dark / afterglow-inspired
     #colors {
     #    background #202020
@@ -258,15 +261,34 @@ bar {
     }
 }
 
-
+#
 # autostart
+#
+
+# walpapper
+exec feh --image-bg black --bg-center ~/.desktop/wallpapper
+
+# keyboard layout toggle
 exec setxkbmap -layout us,ru -variant ,legacy -option grp:shift_caps_toggle
+
+# keyboard layout indicator: fbxkb or xxkb
+#exec fbxkb
+exec xxkb
+
+# compositor
 exec compton
-exec fbxkb
+
+# notification manager
+exec dunst
+
+# dropdown terminal
 exec tilda -h
+
+# screen saver/locker
 exec xscreensaver -nosplash
-# laptop could make use of xfce power manager
-#exec xfce4-power-manager
-# and wicd client
+#exec xautolock -time 10 -locker "dm-tool lock" -notify 10 -notifier "$HOME/bin/screen-fade.sh"
+
+# optional laptop-specific items
 #exec wicd-client
+#exec xfce4-power-manager
 
