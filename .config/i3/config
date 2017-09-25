@@ -171,9 +171,8 @@ for_window [class="Tilda"] floating enable
 for_window [class="MPlayer"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="Pidgin" window_role="buddy_list"] floating enable
-for_window [class="Skype"] floating enable
-for_window [class="Skype" window_role="ConversationsWindow"] floating disable
-#for_window [class="stalonetray"] floating enable
+#for_window [class="Skype"] floating enable
+#for_window [class="Skype" window_role="ConversationsWindow"] floating disable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -244,6 +243,9 @@ client.focused          #073642 #002b36 #fdf6e3 #268bd2
 client.unfocused        #073642 #073642 #839496 #073642
 client.focused_inactive #073642 #002b36 #93a1a1 #073642
 client.urgent           #002b36 #dc322f #fdf6e3 #002b36
+
+# pointless decoration
+for_window [class=".*"] title_format "<span foreground='#268bd2'> &gt;</span> %title"
 
 # i3bar
 bar {
